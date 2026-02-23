@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@tarquinen/opencode-dcp@latest"],
+  "lsp": {
+    "r-languageserver": {
+      "command": ["R", "--no-echo", "-e", "languageserver::run()"],
+      "extensions": [".R", ".r", ".Rmd", ".rmd", ".qmd"]
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+      },
+      "enabled": true
+    },
+    "Astro docs": {
+      "type": "remote",
+      "url": "https://mcp.docs.astro.build/mcp",
+      "enabled": false
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp",
+      "enabled": false
+    }
+  },
+  "agent": {
+    "explore": {
+      "model": "zai-coding-plan/glm-5"
+    },
+    "general": {
+      "model": "zai-coding-plan/glm-5"
+    }
+  }
+}
